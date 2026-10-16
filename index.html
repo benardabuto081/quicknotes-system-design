@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickNotes API Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>QuickNotes Manager</h1>
+            <p class="subtitle">API Client & System Design Dashboard</p>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <button id="load-btn">Load Notes</button>
+        </section>
+
+        <!-- Status Message -->
+        <p id="status" aria-live="polite"></p>
+
+        <!-- Create Note Form -->
+        <section class="form-section">
+            <h2>Create a New Note</h2>
+            <form id="note-form">
+                <div class="form-group">
+                    <label for="title-input">Title (Required, max 100 chars):</label>
+                    <input type="text" id="title-input" maxlength="100" required placeholder="Enter note title...">
+                </div>
+                <div class="form-group">
+                    <label for="body-input">Body (Optional):</label>
+                    <textarea id="body-input" rows="4" placeholder="Enter note content..."></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Create Note</button>
+            </form>
+        </section>
+
+        <!-- Notes List Container -->
+        <section class="notes-section">
+            <h2>Notes Feed</h2>
+            <ul id="notes-list">
+                <li class="empty-state">No notes loaded yet. Click "Load Notes" above.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="api.js" defer></script>
+</body>
+</html>
